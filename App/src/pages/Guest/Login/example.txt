@@ -1,0 +1,66 @@
+import React, { useState } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+import { BASE_URL } from '../../../config';
+import { Button } from '../../../components/Field';
+
+const Login = () => {
+    const [error, setError] = useState("");
+
+    const handleLogin = () => {
+        setError("");
+
+        const body = JSON.stringify({
+            username: "chris",
+            password: "strongpass123"
+        });
+
+        fetch(`${BASE_URL}/user/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body
+        })
+            .then(res => {
+                if (res.ok) return res.json();
+                else {
+                    setError("Invalid Credentials");
+                    throw new Error("Invalid Credentials");
+                }
+            })
+            .then(json => {
+                console.log("Login successful:", json);
+            })
+            .catch(err => {
+                console.log("Error during login:", err.message);
+                setError("Invalid Credentials");
+            });
+    };
+
+    return (
+        <View style={styles.container}>
+            <Button
+                text="Login"
+                onPress={handleLogin}
+            />
+            {error !== "" && <Text style={styles.error}>{error}</Text>}
+        </View>
+    );
+};
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        padding: 20,
+        backgroundColor: "#fff"
+    },
+    error: {
+        marginTop: 10,
+        color: "red",
+        textAlign: "center"
+    }
+});
+
+export default Login;
