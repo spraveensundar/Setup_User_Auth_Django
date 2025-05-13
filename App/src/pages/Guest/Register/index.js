@@ -42,7 +42,7 @@ const SingUp = ({ handleSubmit, reset }) => {
             />
             <Field
                 name="first_name"
-                label="Email"
+                label="First Name"
                 component={Input}
                 validate={[required()]}
             />
@@ -54,7 +54,7 @@ const SingUp = ({ handleSubmit, reset }) => {
             />
             <Field
                 name="password"
-                label="Last Password"
+                label="Password"
                 component={Input}
                 validate={[required()]}
             />
