@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         fontFamily: fonts.poppinsRegular,
         fontSize: fontScale(16),
         lineHeight: fontScale(24),
-        color: colors.dark
+        color: colors.black
     },
     h5: {
         fontFamily: fonts.poppinsBold,

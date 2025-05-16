@@ -9,6 +9,11 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         paddingVertical: size.xx_tiny
+    },
+    content: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
     }
 })
 

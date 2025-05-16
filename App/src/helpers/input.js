@@ -11,16 +11,6 @@ export const getPasswordValidationRegex = (value) => {
     return undefined;
 };
 
-export const phoneNumberValidator = (value) => {
-    const phoneRegex = /^\[6-9]\d{9}$/;
-    if (!value) {
-        return 'Phone number is required';
-    } else if (!phoneRegex.test(value)) {
-        return 'Invalid phone number';
-    }
-    return undefined;
-};
-
 export function cleanInput(value, removeEmoji = true) {
     if (!value) {
         return '';

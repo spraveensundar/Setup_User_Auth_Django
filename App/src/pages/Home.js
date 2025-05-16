@@ -1,10 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View } from 'react-native';
 
-const Home = () => {
+import { Text } from '../components/Typography';
+
+import styles from './Guest/styles';
+
+const Home = ({ route }) => {
+    const username = route.params?.username;
+
     return (
-        <View>
-            <Text>Home</Text>
+        <View style={styles.content}>
+            <Text tag="h1">Welcome</Text>
+            <Text tag="h1">{username}!</Text>
         </View>
     )
 }

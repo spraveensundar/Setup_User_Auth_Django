@@ -1,7 +1,4 @@
 import { createNavigationContainerRef } from "@react-navigation/native";
-import { Linking } from "react-native";
-
-import { EVENTOQ_PHONE } from "../config";
 
 export const navigationRef = createNavigationContainerRef();
 
@@ -16,7 +13,3 @@ export function navigate(name, params) {
         navigationRef.current?.navigate(name, params);
     }
 }
-
-export const makePhoneCall = () => {
-    Linking.openURL(`tel:${EVENTOQ_PHONE}`);
-};

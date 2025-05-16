@@ -22,6 +22,7 @@
     "react": "19.0.0",
     "react-native": "0.78.2",
     "react-native-gesture-handler": "^2.25.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-masked-view": "^0.2.0",
     "react-native-root-siblings": "^5.0.1",
     "react-native-root-toast": "^4.0.1",
